@@ -4,6 +4,7 @@ import UpdateForm from "./components/UpdateForm";
 import AddTaskFrom from "./components/AddTaskFrom";
 import ToDo from "./components/ToDo";
 import "./App.css";
+import Footer from "./components/footer";
 function App() {
   const [toDo, setToDo] = useState([]);
 
@@ -55,40 +56,43 @@ function App() {
   };
 
   return (
-    <div className="container App">
-      <br />
-      <br />
-      <h2>To Do List App(ReactJS)</h2>
-      <br />
-      <br />
+    <>
+      <div className="container App">
+        <br />
+        <br />
+        <h2>To Do List App(ReactJS)</h2>
+        <br />
+        <br />
 
-      {updateData && updateData ? (
-        <>
-          <UpdateForm
-            updateData={updateData}
-            updateTask={updateTask}
-            cancelUpdate={cancelUpdate}
-            changeTask={changeTask}
-          />
-        </>
-      ) : (
-        <>
-          <AddTaskFrom
-            newTask={newTask}
-            setNewTask={setNewTask}
-            addTask={addTask}
-          />
-        </>
-      )}
+        {updateData && updateData ? (
+          <>
+            <UpdateForm
+              updateData={updateData}
+              updateTask={updateTask}
+              cancelUpdate={cancelUpdate}
+              changeTask={changeTask}
+            />
+          </>
+        ) : (
+          <>
+            <AddTaskFrom
+              newTask={newTask}
+              setNewTask={setNewTask}
+              addTask={addTask}
+            />
+          </>
+        )}
 
-      {toDo && toDo.length ? "" : "No taskks"}
-      <ToDo
-        toDo={toDo}
-        markDone={markDone}
-        deleteTask={deleteTask}
-        setUpdateData={setUpdateData}
-      />
-    </div>
+        {toDo && toDo.length ? "" : "No tasks"}
+        <ToDo
+          toDo={toDo}
+          markDone={markDone}
+          deleteTask={deleteTask}
+          setUpdateData={setUpdateData}
+        />
+      </div>
+      <Footer />
+    </>
   );
 }
 
