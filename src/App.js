@@ -9,9 +9,7 @@ function App() {
 
   const [newTask, setNewTask] = useState("");
   const [updateData, setUpdateData] = useState("");
-  {
-    /* Add Task  */
-  }
+
   const addTask = () => {
     if (newTask) {
       let num = toDo.length + 1;
@@ -20,16 +18,12 @@ function App() {
       setNewTask("");
     }
   };
-  {
-    /* Delete Task  */
-  }
+
   const deleteTask = (id) => {
     let newTasks = toDo.filter((task) => task.id !== id);
     setToDo(newTasks);
   };
-  {
-    /* Done Task  */
-  }
+
   const markDone = (id) => {
     let newTask = toDo.map((task) => {
       if (task.id == id) {
@@ -39,15 +33,11 @@ function App() {
     });
     setToDo(newTask);
   };
-  {
-    /* Cancel Update  */
-  }
+
   const cancelUpdate = () => {
     setUpdateData("");
   };
-  {
-    /* Change Task  */
-  }
+
   const changeTask = (e) => {
     let newEntry = {
       id: updateData.id,
@@ -56,9 +46,7 @@ function App() {
     };
     setUpdateData(newEntry);
   };
-  {
-    /* Update Task  */
-  }
+
   const updateTask = () => {
     let filterRecords = [...toDo].filter((task) => task.id !== updateData.id);
     let updatedOject = [...filterRecords, updateData];
