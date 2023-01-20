@@ -26,7 +26,7 @@ function App() {
 
   const markDone = (id) => {
     let newTask = toDo.map((task) => {
-      if (task.id == id) {
+      if (task.id === id) {
         return { ...task, status: !task.status };
       }
       return task;
