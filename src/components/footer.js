@@ -1,7 +1,5 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileContract } from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
   return (
@@ -25,7 +23,18 @@ function Footer() {
                 ></lottie-player>
               </div>
 
-              <div>2022 Company, Inc</div>
+              <div>
+                2022{" "}
+                <a
+                  className="text-muted fw-bold text-decoration-none"
+                  target="_blank"
+                  href="https://frazmkhan.com/"
+                  rel="noreferrer"
+                >
+                  Frazmkhan
+                </a>
+                , Inc
+              </div>
             </div>
           </div>
         </footer>
